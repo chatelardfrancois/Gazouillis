@@ -69,6 +69,7 @@ if(!empty($_POST)){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/gazouiller.css">
+    <link rel="stylesheet" href="css/media.css">
     <link rel="icon" type="image/png" href="media/img/faviconv2.gif"/>
     <script src="https://kit.fontawesome.com/f9102af03b.js" crossorigin="anonymous"></script>
     <title>Gazouillis - Accueil</title>
