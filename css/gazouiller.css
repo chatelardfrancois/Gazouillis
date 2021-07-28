@@ -1,0 +1,70 @@
+header > div{
+    justify-content: space-between;
+}
+#gazouiller{
+    position: inherit;
+    margin-right:2.5rem ;
+    box-shadow: none;
+    padding: 0.15rem 1.5rem 0.3rem 1.5rem;
+}
+#content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    min-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    z-index: 0;
+    border: none;
+    overflow-y: hidden;
+}
+.left, .right{
+    margin-top: 1rem;
+}
+.right{
+    display: flex;
+    flex-grow: 1;
+}
+form{
+    width: 100%;
+}
+textarea{
+    height: 10rem;
+    width: 99%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif!important;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    font-size: 1.5rem;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(239, 243, 244);
+    resize: none;
+    margin-top: 1rem;
+}
+header > div > label > i, footer > div > i, #profile-pic {
+    color:rgb(29, 161, 242);
+}
+#charNum{
+    visibility: hidden;
+    right: 0;
+    top: -2rem;
+    font-size: 1.5rem;
+    position: relative;
+    text-align: right;
+    margin-right: 1rem;
+    margin-top: -1rem;
+    color :rgb(83, 100, 113);
+}
+#add {
+    font-size: 2.5rem;
+    color:rgb(29, 161, 242);
+    padding: 0.5rem;
+
+}
+#add:hover{
+    color:rgb(29, 161, 242);
+    background-color: rgba(29, 161, 242, 0.1);
+    border-radius: 999rem;
+}
+

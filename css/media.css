@@ -1,0 +1,26 @@
+@media ( max-width :500px) {
+    header > div, footer > div, #content{
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+@media (min-width: 501px) and (max-width :1010px) {
+    header > div, footer > div, #content{
+        min-width: 80%;
+        max-width: 80%;
+    }
+}
+@media (min-width: 1011px) and (max-width :1500px) {
+    header > div, footer > div, #content{
+        min-width: 60%;
+        max-width: 60%;
+    }
+}
+@media ( max-width :1010px) {
+    #gazouiller-text{
+        display: none;
+    }
+    #gazouiller{
+        right: 10%;
+    }
+}
