@@ -72,7 +72,6 @@ header > div > label > i, #profile-pic{
 #burger {display: none;}
 #overlay {display: none;}
 
-
 /*seletion de l'element dont l'id est #burger-button suivant l'element dont l'id est burger et l'état est coché*/
 
 
@@ -197,7 +196,7 @@ main{
     margin-right: 0.5rem;
 }
 #gazouiller:hover{
-background-color: rgb(26, 145, 218);
+    background-color: rgb(26, 145, 218);
 }
 #gazouiller:disabled{
     opacity: 0.5;
@@ -239,4 +238,7 @@ background-color: rgb(26, 145, 218);
     margin-left: 0.5rem;
     font-size: 1rem;
     color: rgb(83, 100, 113);
+}
+h1{
+    margin: 0;
 }

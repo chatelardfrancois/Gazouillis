@@ -1,0 +1,92 @@
+#pseudo{
+    font-size: 2rem;
+    font-weight: bold;
+}
+#nb{
+    font-size: 1rem;
+    color: rgb(83, 100, 113);
+}
+#profil-infos{
+    display: flex;
+    flex-direction: column;
+}
+#profil-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(239, 243, 244);
+}
+#profil-nav > div[id=b], #profil-nav > div[id=a]{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgb(83, 100, 113);
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+#profil-nav > div[id=b]:hover, #profil-nav > div[id=a]:hover{
+    color:rgb(29, 161, 242);
+    background-color: rgba(29, 161, 242, 0.1);
+}
+
+#profil-gazouillis:checked ~ div[id=a]{
+    color:rgb(29, 161, 242)!important;
+}
+#profil-gazouillis:checked ~ div[id=a] > div > div[id=barre]{
+    visibility: visible!important;
+}
+#profil-gazouillis:checked ~ div[id=b] > div > div[id=barre]{
+    visibility: hidden!important;
+}
+#profil-jaime:checked ~ div[id=b]{
+    color:rgb(29, 161, 242)!important;
+}
+#profil-jaime:checked ~ div[id=a] > div > div[id=barre]{
+    visibility: hidden!important;
+}
+#profil-jaime:checked ~ div[id=b]  > div > div[id=barre]{
+    visibility: visible!important;
+}
+
+
+
+#barre{
+    position: relative;
+    bottom: 0;
+    background-color: rgb(29, 161, 242);;
+    width: 100%;
+    height: 0.3rem;
+    border-radius: 9999rem;
+    visibility: hidden;
+}
+#nav-text{
+    padding: 1.3rem 0.5rem 1rem 0.5rem;
+}
+
+#profil-infos{
+    padding:1rem;
+}
+#infos-pic{
+    font-size: 5rem;
+    color:rgb(29, 161, 242);
+}
+#infos-pseudo{
+    font-size: 1.3rem;
+}
+#infos-bio{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+#infos-date{
+ color: rgb(83, 100, 113);
+}
+div[id=b], div[id=a]{
+    cursor: pointer;
+}
+

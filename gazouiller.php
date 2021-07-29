@@ -72,7 +72,7 @@ if(!empty($_POST)){
     <link rel="stylesheet" href="css/media.css">
     <link rel="icon" type="image/png" href="media/img/faviconv2.gif"/>
     <script src="https://kit.fontawesome.com/f9102af03b.js" crossorigin="anonymous"></script>
-    <title>Gazouillis - Accueil</title>
+    <title>Gazouillis - Gazouiller</title>
 </head>
 <body>
 <header>
@@ -82,21 +82,7 @@ if(!empty($_POST)){
         <label id="burger-button" for="burger">
             <i class="fas fa-arrow-left" onclick="history.back()"></i>
         </label>
-        <nav id="burger-content">
-            <div id="nav-top">
-                <h1>Informations du compte</h1>
-                <label id="burger-button" for="burger">
-                    <i class="fas fa-times"></i>
-                </label>
-            </div>
 
-            <ul>
-                <li><a href="">Accueil</a></li>
-                <li><a href="">Profil</a></li>
-                <li><a href="">Déconnection</a></li>
-                <li><a href="inscription.php">Inscription</a></li>
-            </ul>
-        </nav>
         <button id="gazouiller" onclick="document.getElementById('form').submit()" disabled>Gazouiller</button>
         <div id="overlay"></div>
     </div>
@@ -138,13 +124,14 @@ if(!empty($_POST)){
                         }
                     }
                 </script>
-                <div id="charNum">0</div>
+
                     <?php if($error != "") : ?>
                         <p class="help is-danger"> <?= $error ?> </p>
                     <?php endif; ?>
-                <div>
+                <div style="display: flex;">
                     <i id="add" class="far fa-image"></i>
                     <i id="add" class="far fa-smile"></i>
+                    <div id="charNum">0</div>
                 </div>
             </form>
         </div>

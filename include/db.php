@@ -60,6 +60,15 @@ function insertUser($email, $username, $passwordHash, $bio)
         //":date" => date("Y-m-d H:i:s")
     ]);
 }
+function getUserById($userId){
+    $pdo = connect();
+    $sql = "SELECT `username`, `bio`, users.date_created, COUNT(tweets.message) as nb_gazouillis FROM users INNER JOIN tweets on tweets.author_id=users.id WHERE users.id = :id;";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([
+        ":id" => $userId
+    ]);
+    return $stmt->fetch();
+}
 
 function getUserByEmail($email){
     $pdo = connect();
@@ -84,15 +93,21 @@ function getUserByPseudo($pseudo){
 function selectAllTweets()
 {
     $pdo = connect();
-    $sql = "SELECT `message`, users.username, tweets.date_created FROM tweets INNER JOIN users on users.id=tweets.author_id ORDER BY tweets.date_created DESC LIMIT 20";
+    $sql = "SELECT `message`, tweets.author_id, users.username, tweets.date_created FROM tweets INNER JOIN users on users.id=tweets.author_id ORDER BY tweets.date_created DESC LIMIT 20";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll();
 }
 
-function getTweetById($id)
+function selectTweetsById($userId)
 {
     $pdo = connect();
+    $sql = "SELECT `message`, tweets.author_id, users.username, tweets.date_created FROM tweets INNER JOIN users on users.id=tweets.author_id WHERE tweets.author_id = :id ORDER BY tweets.date_created DESC LIMIT 20";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([
+        ":id" => $userId
+    ]);
+    return $stmt->fetchAll();
 }
 
 //--------- fonctions demo select utilisées pour l'exemple dans tweet.php ---------

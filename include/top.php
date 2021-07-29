@@ -28,10 +28,9 @@
             </div>
 
             <ul>
-                <li><a href="">Accueil</a></li>
-                <li><a href="">Profil</a></li>
-                <li><a href="">Déconnection</a></li>
-                <li><a href="inscription.php">Inscription</a></li>
+                <li><a href="profil.php" onclick="document.getElementById('burger').click()">Profil</a></li>
+                <li><a href="" onclick="document.getElementById('burger').click()">Déconnection</a></li>
+                <li><a href="inscription.php" onclick="document.getElementById('burger').click()">Inscription</a></li>
             </ul>
         </nav>
         <h1>Accueil</h1>
