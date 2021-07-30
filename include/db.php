@@ -23,14 +23,14 @@ function connect()
     return $pdo;
 }
 
-function insertTweet(string $tweet)
+function insertTweet($tweet, $id)
 {
     $pdo = connect();
     //On utilise les parametre nomnés afin d'éviter toute injection SQL.
     //le remplacement des paramètres nommés se fait en interne de MySQL (ce n'est donc pas une
     //concaténation, d'où pas d'injection SQL possible)
     $sql = "INSERT INTO tweets (id, author_id, message, likes_quantity, date_created)
-                VALUES (NULL, 666, :message, 0, NOW());";
+                VALUES (NULL, :id, :message, 0, NOW());";
 
     //echo $sql;
 
@@ -41,6 +41,7 @@ function insertTweet(string $tweet)
     //$stmt->bindValue(':message', $tweet);
 
     $stmt->execute([
+        ":id"=> $id,
         ":message" => $tweet,
         //":date" => date("Y-m-d H:i:s")
     ]);
@@ -108,6 +109,23 @@ function selectTweetsById($userId)
         ":id" => $userId
     ]);
     return $stmt->fetchAll();
+}
+
+function checkIdentifiant($identifiant){
+    $pdo = connect();
+    $sql = "SELECT `id`, `email`, `username`, `password` FROM `users` WHERE `email`= :email;";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([
+        ":email" => $identifiant
+    ]);
+    $sql2 = "SELECT `id`, `email`, `username`, `password` FROM `users` WHERE `username`= :username;";
+    $stmt2 = $pdo->prepare($sql2);
+    $stmt2->execute([
+        ":username" => $identifiant
+    ]);
+    $result = ['email' => $stmt->fetch(),
+        'pseudo' => $stmt2->fetch()];
+    return $result;
 }
 
 //--------- fonctions demo select utilisées pour l'exemple dans tweet.php ---------

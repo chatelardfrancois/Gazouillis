@@ -1,7 +1,9 @@
 <?php
 include 'include/top.php';
 include 'include/db.php';
-
+if(empty($_SESSION["id"])){
+    header("Location: home.php");
+}
 $results = selectAllTweets();
 ?>
 <main>

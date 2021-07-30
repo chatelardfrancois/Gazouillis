@@ -1,5 +1,9 @@
 <?php
 include 'include/db.php';
+session_start();
+if(empty($_SESSION["id"])){
+    header("Location: home.php");
+}
 //si mon tableau associatif $_GET est vide, ce n'esp aps normale et je redirige vers une 404
 if (empty($_GET)){
     //redirection vers une page 404 (page non trouvée)

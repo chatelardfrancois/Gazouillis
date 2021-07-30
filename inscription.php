@@ -1,5 +1,6 @@
 <?php
 include 'include/db.php';
+session_start();
 //initialisation tableau associatif des éventuelles erreurs
 $errors = [];
 
@@ -70,7 +71,8 @@ if (!empty($_POST)){
         insertUser($email, $pseudo, $passwordHash, $bio);
 
 
-        //todo: //////////////////// 6. Message flash (Session) ////////////////////
+        $result = checkIdentifiant($email);
+        $_SESSION["id"]=$result['email']['id'];
         header("Location: index.php");
         die();
 

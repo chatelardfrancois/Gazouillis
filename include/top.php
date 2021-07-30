@@ -1,3 +1,7 @@
+<?php
+session_start();
+$id = $_SESSION['id'];
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -28,9 +32,8 @@
             </div>
 
             <ul>
-                <li><a href="profil.php" onclick="document.getElementById('burger').click()">Profil</a></li>
-                <li><a href="" onclick="document.getElementById('burger').click()">Déconnection</a></li>
-                <li><a href="inscription.php" onclick="document.getElementById('burger').click()">Inscription</a></li>
+                <li><a href="profil.php?user_id=<?=$id?>" onclick="document.getElementById('burger').click()">Profil</a></li>
+                <li><a href="deconnexion.php" onclick="document.getElementById('burger').click()">Déconnexion</a></li>
             </ul>
         </nav>
         <h1>Accueil</h1>

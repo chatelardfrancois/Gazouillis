@@ -1,6 +1,9 @@
 <?php
 include 'include/db.php';
-
+session_start();
+if(empty($_SESSION["id"])){
+    header("Location: home.php");
+}
 //Je traite ici mon formulaire
 
 $error = "";
@@ -37,7 +40,7 @@ if(!empty($_POST)){
 
     if($error == "") {
         //insérer le message en bdd si le message saisi est valide
-        insertTweet($tweet);
+        insertTweet($tweet, $_SESSION["id"]);
 
         //------- exemples pour montrer les différents select
         /*        $results = selectAllTweets();
