@@ -27,7 +27,7 @@ if (empty($_GET)){
 //appelle notre fonction pour récupérer les infos de cet user
 $user = getUserById($userId);
 
-if (!isset($user)) {
+if ($user['username']==null) {
     //redirection vers une page 404 (page non trouvée)
     header("HTTP/1.1 404 Not Found");
     include("404.php");

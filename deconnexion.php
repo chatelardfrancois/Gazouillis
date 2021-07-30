@@ -2,6 +2,7 @@
 session_start();
 if(!empty($_SESSION["id"])){
     unset($_SESSION["id"]);
+    unset($_SESSION['username']);
 }
 
 if(empty($_SESSION["id"])){

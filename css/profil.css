@@ -72,13 +72,7 @@
 #profil-infos{
     padding:1rem;
 }
-#infos-pic{
-    font-size: 5rem;
-    color:rgb(29, 161, 242);
-}
-#infos-pseudo{
-    font-size: 1.3rem;
-}
+
 #infos-bio{
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;

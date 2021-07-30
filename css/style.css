@@ -106,7 +106,7 @@ nav#burger-content {
     transition:all .3s
 }
 /* header > navigation */
-nav ul { list-style: none; padding: 1rem; margin: 0;}
+nav ul, nav > div#profil-infos { list-style: none; padding: 1rem; margin: 0;}
 nav ul a {
     font-size : 1.2rem;
     color: #000;
@@ -241,4 +241,11 @@ main{
 }
 h1{
     margin: 0;
+}
+#infos-pic{
+    font-size: 5rem;
+    color: rgb(29, 161, 242);
+}
+#infos-pseudo{
+    font-size: 1.3rem;
 }

@@ -1,6 +1,9 @@
 <?php
 include 'include/db.php';
 session_start();
+if(!empty($_SESSION["id"])){
+    header("Location: index.php");
+}
 //initialisation tableau associatif des éventuelles erreurs
 $errors = [];
 

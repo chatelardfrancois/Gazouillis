@@ -1,6 +1,9 @@
 <?php
 include 'include/db.php';
 session_start();
+if(!empty($_SESSION["id"])){
+    header("Location: index.php");
+}
 //initialisation tableau associatif des éventuelles erreurs
 $errors = [];
 
@@ -41,8 +44,10 @@ if (!empty($_POST)) {
             } else{
                 if($result['email']!=false){
                     $_SESSION["id"]=$result['email']['id'];
+                    $_SESSION["username"]=$result['email']['username'];
                 } else{
                     $_SESSION["id"]=$result['pseudo']['id'];
+                    $_SESSION["username"]=$result['pseudo']['username'];
                 }
                 header("Location: index.php");
             }

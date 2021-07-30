@@ -1,6 +1,7 @@
 <?php
 session_start();
 $id = $_SESSION['id'];
+$username = $_SESSION['username'];
 ?>
 <!doctype html>
 <html lang="fr">
@@ -29,6 +30,10 @@ $id = $_SESSION['id'];
                 <label id="burger-button" for="burger">
                     <i class="fas fa-times"></i>
                 </label>
+            </div>
+            <div id="profil-infos">
+                <i id="infos-pic" class="fas fa-user"></i>
+                <div id="infos-pseudo"><h1><?= $username ?></h1></div>
             </div>
 
             <ul>
